@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background-color: beige;
+}
+
+ul {
+    list-style: none;
+    /* width: 100vw; */
+    height: 100vh;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    align-content: center;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+#index-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 2px solid black;
+}

@@ -8,7 +8,7 @@ class Edit extends React.Component {
 
         return (
             <DefaultLayout title='edit a console' group='products'>
-                {/* replace with console properties */}
+               
                 <h1>Edit Console Page</h1>
                 <form action={`/products/${vgconsole._id}?_method=PUT`} method='POST'>
                     
@@ -20,6 +20,9 @@ class Edit extends React.Component {
 
                     <label htmlFor='quantity'>Quantity:</label>
                     <input type='number' id='quantity' name='quantity' defaultValue={ vgconsole.quantity }></input>
+
+                    <label htmlFor='imgUrl'>Console image:</label>
+                    <input type='text' id='imgUrl' name='imgUrl' defaultValue={ vgconsole.imgUrl}></input>
 
                     <label htmlFor='isUsed'>Console is used:</label>
                     <input type='checkbox' id='isUsed' name='isUsed' defaultChecked={ vgconsole.isUsed }></input>

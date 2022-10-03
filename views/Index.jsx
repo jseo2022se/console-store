@@ -10,13 +10,14 @@ class Index extends React.Component {
 
         return (
             <DefaultLayout title='All Consoles' group='products'>
-                <h1>Consoles Index Page</h1>
+                <h1 id='index-title'>Consoles Store Front</h1>
                 <ul id='all-index'>
                     {vgconsoles.map((vgconsole) => {
                         return (
                             <li key={vgconsole._id}>
-                                {/* to be changed to proper console url and console properties */}
-                                The name of the console is <a href={`/products/${vgconsole._id}`}>{ vgconsole.name }</a>.
+                                <div>
+                                    <a href={`/products/${vgconsole._id}`}><img src={`${vgconsole.imgUrl}`}></img></a>
+                                </div>
                             </li>
                         )
                     })}

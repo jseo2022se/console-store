@@ -9,7 +9,8 @@ const vgConsoleSchema = new Schema({
     name: { type: String, required: true }, 
     details: { type: String, required: true },
     quantity: { type: Number, required: true},
-    isUsed: Boolean
+    isUsed: Boolean,
+    imgUrl: { type: String, required: true}
 })
 
 // create a Model from our Schema

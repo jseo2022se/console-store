@@ -14,7 +14,7 @@ const findAllConsoles = (req, res) => {
 
 // new
 const newConsole = (req, res) => {
-    // console.log('Hello')
+   
     res.render('New')
 }
 
@@ -54,7 +54,7 @@ const createConsole = (req, res) => {
     } else {
         req.body.isUsed = false
     }
-    // res.send(req.body)
+    
     vgConsole.create(req.body, (err, createdConsole) => {
         if (err) {
             res.status(400).json(err)
@@ -70,7 +70,7 @@ const editConsole = (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            console.log('inside edit route')
+            
             res.status(200).render('Edit', { vgconsole: foundConsole})
         }
     })
@@ -81,10 +81,10 @@ const showUniqueConsole = (req, res) => {
 
     vgConsole.findById(req.params.id, (err, foundConsole) => {
         if (err) {
-            // console.log('unable to render show')
+            
             res.status(400).json(err)
         } else {
-            // console.log('in show route')
+            
             res.status(200).render('Show', { vgconsole: foundConsole })
         }
     })

@@ -8,7 +8,7 @@ class New extends React.Component {
 
                 <h1>New Console Page</h1>
                 <form action='/products' method='POST'>
-                    {/* replace property names with ones mentioned in models/consoles.js */}
+                    
                     <label htmlFor='name'>Name:</label>
                     <input type='text' id='title' name='name'></input>
 
@@ -20,6 +20,9 @@ class New extends React.Component {
 
                     <label htmlFor='isUsed'>Console is used:</label>
                     <input type='checkbox' id='isUsed' name='isUsed'></input>
+
+                    <label htmlFor='imgUrl'>Console image:</label>
+                    <input type='text' id='imgUrl' name='imgUrl'></input>
 
                     <input type='submit' value='Add a new console'></input>
 

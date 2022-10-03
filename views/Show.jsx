@@ -4,13 +4,18 @@ const DefaultLayout = require('../views/layouts/DefaultLayouts')
 
 class Show extends React.Component {
 
+    
+
+    handleClick = (amount) => {
+        amount--;
+    }
+
     render() {
 
-        const { name, details, isUsed, quantity, _id } = this.props.vgconsole // replace with console properties
+        const { name, details, isUsed, quantity, _id, imgUrl} = this.props.vgconsole 
 
         return (
             <DefaultLayout title={`${name} details`} group='products'>
-                {/* to be replaced with custom details with models/console.js */}
             
                 <h1>Console Details</h1>
                 <p>
@@ -22,14 +27,20 @@ class Show extends React.Component {
                 <p>
                     Quantity: { quantity == 0 ? "OUT OF STOCK": quantity}
                 </p>
-                <p>
+                <p hidden={ quantity == 0 ? true : false}>
                     {isUsed ? "The console is used": "The console is not used"}
                 </p>
 
-                <button>
+                <div>
+                    <img src={`${imgUrl}`}></img>
+                </div>
+
+                <button hidden={ quantity == 0 ? true : false} onClick={this.handleClick(quantity)}>
                     <a href={`/products/${_id}`}>Buy</a>
                 </button>
+
                 <br></br>
+                
                 <button>
                     <a href={`/products/${_id}/edit`}>Edit</a>
                 </button>
@@ -37,10 +48,6 @@ class Show extends React.Component {
                 <form action={`/products/${_id}?_method=DELETE`} method='POST'>
                     <input type='submit' value='Delete'></input>
                 </form>
-
-                <nav>
-                    <a href='/products'>Back</a>
-                </nav>
            
             </DefaultLayout>
         )
