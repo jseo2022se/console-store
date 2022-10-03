@@ -18,6 +18,9 @@ class Edit extends React.Component {
                     <label htmlFor='details'>Details:</label>
                     <input type='text' id='details' name='details' defaultValue={ vgconsole.details }></input>
 
+                    <label htmlFor='quantity'>Quantity:</label>
+                    <input type='number' id='quantity' name='quantity' defaultValue={ vgconsole.quantity }></input>
+
                     <label htmlFor='isUsed'>Console is used:</label>
                     <input type='checkbox' id='isUsed' name='isUsed' defaultChecked={ vgconsole.isUsed }></input>
 

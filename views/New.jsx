@@ -15,6 +15,9 @@ class New extends React.Component {
                     <label htmlFor='details'>Details:</label>
                     <input type='text' id='details' name='details'></input>
 
+                    <label htmlFor='quantity'>Quantity:</label>
+                    <input type='number' id='quantity' name='quantity'></input>
+
                     <label htmlFor='isUsed'>Console is used:</label>
                     <input type='checkbox' id='isUsed' name='isUsed'></input>
 

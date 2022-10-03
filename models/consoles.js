@@ -8,6 +8,7 @@ const Schema = mongoose.Schema
 const vgConsoleSchema = new Schema({
     name: { type: String, required: true }, 
     details: { type: String, required: true },
+    quantity: { type: Number, required: true},
     isUsed: Boolean
 })
 

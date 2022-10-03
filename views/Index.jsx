@@ -17,12 +17,6 @@ class Index extends React.Component {
                             <li key={vgconsole._id}>
                                 {/* to be changed to proper console url and console properties */}
                                 The name of the console is <a href={`/products/${vgconsole._id}`}>{ vgconsole.name }</a>.
-                                <button>
-                                    <a href={`/products/${vgconsole._id}/edit`}>Edit</a>
-                                </button>
-                                <form action={`/products/${vgconsole._id}?_method=DELETE`} method='POST'>
-                                    <input type='submit' value='Delete'></input>
-                                </form>
                             </li>
                         )
                     })}
