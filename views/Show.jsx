@@ -6,9 +6,9 @@ class Show extends React.Component {
 
     
 
-    handleClick = amount => () => {
-        amount--;
-    }
+    // handleClick = (amount) => {
+    //     amount--;
+    // }
 
     render() {
 
@@ -38,15 +38,22 @@ class Show extends React.Component {
                         Price: { `$${ price }` }
                     </p>
 
-                    <button hidden={ quantity == 0 ? true : false} onClick={this.handleClick( quantity )}>
+                    <nav>
+                        <a href={`/products/${_id}/edit`}>Edit</a>
+                    </nav>
+
+                    <br></br>
+
+                    {/*onClick={this.handleClick( { quantity: { $inc: -1 } } )*/}
+                    <button hidden={ quantity == 0 ? true : false}>
                         <a href={`/products/${_id}`}>Buy</a>
                     </button>
 
                     <br></br>
-                    
-                    <button>
-                        <a href={`/products/${_id}/edit`}>Edit</a>
-                    </button>
+
+                    {/* <form action={`/products/${_id}?_method=PUT`} method='POST'>
+                        <input type='submit' value='Buy Item'></input>
+                    </form> */}
 
                     <form action={`/products/${_id}?_method=DELETE`} method='POST'>
                         <input type='submit' value='Delete'></input>

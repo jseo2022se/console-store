@@ -12,7 +12,7 @@ const {
     newConsole,
     deleteConsole,
     updateConsole,
-    buyItem,
+    // buyItem,
     createConsole,
     editConsole,
     showUniqueConsole } = require('../controllers/consoleController')
@@ -30,7 +30,7 @@ router.delete('/:id', deleteConsole)
 router.put('/:id', updateConsole)
 
 // buy route
-router.put('/:id', buyItem)
+// router.put('/:id', buyItem)
 
 // create route
 router.post('/', createConsole)
@@ -38,7 +38,7 @@ router.post('/', createConsole)
 // edit route
 router.get('/:id/edit', editConsole)
 
-// shoow route
+// show route
 router.get('/:id', showUniqueConsole)
 
 

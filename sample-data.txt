@@ -1,0 +1,8 @@
+famicom:
+- name: famicom
+- url: https://s.pacn.ws/1500/re/nintendo-classic-mini-famicom-493103.3.jpg?v=qm68x0&width=1500
+- price: $80
+- details: Developed in 1983 Nintendo introduced the Famicom console system that changed the gaming world forever. Sporting a strong collection of games and accessories for a reasonable the Famicom quickly propelled Nintendo to the top of the gaming industry.
+- used: yes
+- quantity: 8
+
