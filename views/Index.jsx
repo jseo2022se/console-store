@@ -9,8 +9,8 @@ class Index extends React.Component {
         const { vgconsoles } = this.props
 
         return (
-            <DefaultLayout title='All Consoles' group='products'>
-                <h1 id='index-title'>Consoles Store Front</h1>
+            <DefaultLayout title='All Consoles' group='Home'>
+                <h1 className='title'>The Console Dungeon</h1>
                 <ul id='all-index'>
                     {vgconsoles.map((vgconsole) => {
                         return (
@@ -23,9 +23,6 @@ class Index extends React.Component {
                     })}
                 </ul>
 
-                <nav>
-                    <a href='/products/new'>Add a new console</a>
-                </nav>
             </DefaultLayout>
         )
     }

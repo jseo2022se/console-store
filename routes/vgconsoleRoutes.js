@@ -12,9 +12,10 @@ const {
     newConsole,
     deleteConsole,
     updateConsole,
+    buyItem,
     createConsole,
     editConsole,
-    showUniqueConsole, } = require('../controllers/consoleController')
+    showUniqueConsole } = require('../controllers/consoleController')
 
 // index route
 router.get('/', findAllConsoles)
@@ -27,6 +28,9 @@ router.delete('/:id', deleteConsole)
 
 // update route
 router.put('/:id', updateConsole)
+
+// buy route
+router.put('/:id', buyItem)
 
 // create route
 router.post('/', createConsole)

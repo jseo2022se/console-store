@@ -39,6 +39,18 @@ const updateConsole = (req, res) => {
     }
 
     vgConsole.findByIdAndUpdate(req.params.id, req.body, (err, foundConsole) => {
+
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/products/${req.params.id}`)
+        }
+    })
+}
+
+// buy 
+const buyItem = (req, res) => {
+    vgConsole.findByIdAndUpdate(req.params.id, { quantity: { $inc: -1 } }, (err, foundConsole) => {
         if (err) {
             res.status(400).json(err)
         } else {
@@ -95,6 +107,7 @@ module.exports = {
     newConsole,
     deleteConsole,
     updateConsole,
+    buyItem,
     createConsole,
     editConsole,
     showUniqueConsole

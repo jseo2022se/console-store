@@ -6,49 +6,53 @@ class Show extends React.Component {
 
     
 
-    handleClick = (amount) => {
+    handleClick = amount => () => {
         amount--;
     }
 
     render() {
 
-        const { name, details, isUsed, quantity, _id, imgUrl} = this.props.vgconsole 
+        const { name, details, isUsed, quantity, price, _id, imgUrl} = this.props.vgconsole 
 
         return (
-            <DefaultLayout title={`${name} details`} group='products'>
+            <DefaultLayout title={`${name} details`} group='Home'>
             
-                <h1>Console Details</h1>
-                <p>
-                    Console name: { name }
-                </p>
-                <p>
-                    Details: { details }
-                </p>
-                <p>
-                    Quantity: { quantity == 0 ? "OUT OF STOCK": quantity}
-                </p>
-                <p hidden={ quantity == 0 ? true : false}>
-                    {isUsed ? "The console is used": "The console is not used"}
-                </p>
+                <h1 className='title'>Console Details</h1>
+                <div className='show-details'>
+                    <div>
+                        <img src={`${imgUrl}`}></img>
+                    </div>
+                    <p>
+                        Console name: { name }
+                    </p>
+                    <p>
+                        Details: { details }
+                    </p>
+                    <p>
+                        Quantity: { quantity == 0 ? "OUT OF STOCK": quantity}
+                    </p>
+                    <p hidden={ quantity == 0 ? true : false}>
+                        {isUsed ? "The console is used": "The console is not used"}
+                    </p>
+                    <p>
+                        Price: { `$${ price }` }
+                    </p>
 
-                <div>
-                    <img src={`${imgUrl}`}></img>
+                    <button hidden={ quantity == 0 ? true : false} onClick={this.handleClick( quantity )}>
+                        <a href={`/products/${_id}`}>Buy</a>
+                    </button>
+
+                    <br></br>
+                    
+                    <button>
+                        <a href={`/products/${_id}/edit`}>Edit</a>
+                    </button>
+
+                    <form action={`/products/${_id}?_method=DELETE`} method='POST'>
+                        <input type='submit' value='Delete'></input>
+                    </form>
                 </div>
-
-                <button hidden={ quantity == 0 ? true : false} onClick={this.handleClick(quantity)}>
-                    <a href={`/products/${_id}`}>Buy</a>
-                </button>
-
-                <br></br>
-                
-                <button>
-                    <a href={`/products/${_id}/edit`}>Edit</a>
-                </button>
-
-                <form action={`/products/${_id}?_method=DELETE`} method='POST'>
-                    <input type='submit' value='Delete'></input>
-                </form>
-           
+            
             </DefaultLayout>
         )
     }

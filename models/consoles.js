@@ -10,6 +10,7 @@ const vgConsoleSchema = new Schema({
     details: { type: String, required: true },
     quantity: { type: Number, required: true},
     isUsed: Boolean,
+    price: { type: Number, required: true},
     imgUrl: { type: String, required: true}
 })
 

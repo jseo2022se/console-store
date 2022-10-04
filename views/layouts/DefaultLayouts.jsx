@@ -11,8 +11,13 @@ class DefaultLayout extends React.Component {
                     <link rel='stylesheet' href='/css/styles.css'></link>
                 </head>
                 <body>
-                    <nav> 
-                        <a href={`/${this.props.group}`}>{this.props.group}</a>
+                    <nav className='navbar'> 
+                        <a href={`/products`} className='site-title'>{this.props.group}</a>
+                        <ul>
+                            <li>
+                                <a href={`/products/new`}>Add a new product</a>
+                            </li>
+                        </ul>
                     </nav>
                     {this.props.children}
                 </body>
