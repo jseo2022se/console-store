@@ -14,8 +14,18 @@ class DefaultLayout2 extends React.Component {
                 </head>
                 <body>
                     <nav className='navbar'> 
-                        {/* Only link available on the navigation bar and leads to customer's front page */}
+                        {/* leads to customer's front page */}
                         <a href={`/products/customer`} className='site-title'>{this.props.group}</a>
+                        <ul>
+                            <li>
+                                {/* Link to about store information on customer route*/}
+                                <a href={`/products/customer/about`}>About Us</a>
+                            </li>
+                            <li>
+                                {/* Link to contact information about the store on customer route*/}
+                                <a href={`/products/customer/contact`}>Contact Us</a>
+                            </li>
+                        </ul>
                     </nav>
                     {this.props.children}
                 </body>

@@ -31,6 +31,26 @@ const newConsole = (req, res) => {
     res.render('New')
 }
 
+// about 
+const about = (req, res) => {
+    res.render('About')
+}
+
+// about for customer route
+const about2 = (req, res) => {
+    res.render('About2')
+}
+
+// contact
+const contact = (req, res) => {
+    res.render('Contact')
+}
+
+// contact for customer route
+const contact2 = (req, res) => {
+    res.render('Contact2')
+}
+
 // delete
 const deleteConsole = (req, res) => {
 
@@ -150,6 +170,10 @@ module.exports = {
     findAllConsoles,
     findAllConsoles2,
     newConsole,
+    about,
+    about2,
+    contact,
+    contact2,
     deleteConsole,
     updateConsole,
     buyItem,

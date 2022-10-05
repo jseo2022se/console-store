@@ -16,7 +16,11 @@ const {
     createConsole,
     editConsole,
     showUniqueConsole, 
-    showUniqueConsole2 } = require('../controllers/consoleController')
+    showUniqueConsole2, 
+    about,
+    contact,
+    about2,
+    contact2} = require('../controllers/consoleController')
 
 // index route
 router.get('/', findAllConsoles)
@@ -26,6 +30,18 @@ router.get('/customer', findAllConsoles2)
 
 // new route
 router.get('/new', newConsole)
+
+// about route
+router.get('/about', about)
+
+// about customer route
+router.get('/customer/about', about2)
+
+// contact route
+router.get('/contact', contact)
+
+// contact route for customer
+router.get('/customer/contact', contact2)
 
 // delete route
 router.delete('/:id', deleteConsole)

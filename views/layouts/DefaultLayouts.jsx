@@ -21,6 +21,14 @@ class DefaultLayout extends React.Component {
                                 {/* Link to add a new product to the store */}
                                 <a href={`/products/new`}>Add a new product</a> 
                             </li>
+                            <li>
+                                {/* Link to about store information */}
+                                <a href={`/products/about`}>About Us</a>
+                            </li>
+                            <li>
+                                {/* Link to contact information about the store */}
+                                <a href={`/products/contact`}>Contact Us</a>
+                            </li>
                         </ul>
                     </nav>
                     {this.props.children}

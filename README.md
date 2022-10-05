@@ -64,10 +64,6 @@ Routes available for customers
 | GET  | /products/customer/:id  | show page of a product for the customer |
 
 
-## Github Pages
-
-
-
 
 ## License
 
