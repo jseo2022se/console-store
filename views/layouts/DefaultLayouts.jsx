@@ -1,3 +1,5 @@
+// Default Layout for store owners/employees
+
 const React = require('react')
 
 class DefaultLayout extends React.Component {
@@ -12,10 +14,12 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body>
                     <nav className='navbar'> 
+                        {/* Link to back to the store front page */}
                         <a href={`/products`} className='site-title'>{this.props.group}</a>
                         <ul>
                             <li>
-                                <a href={`/products/new`}>Add a new product</a>
+                                {/* Link to add a new product to the store */}
+                                <a href={`/products/new`}>Add a new product</a> 
                             </li>
                         </ul>
                     </nav>

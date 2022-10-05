@@ -13,6 +13,18 @@ const findAllConsoles = (req, res) => {
     })
 }
 
+// customer index
+// renders Index2 instead of Index
+const findAllConsoles2 = (req, res) => {
+    vgConsole.find({}, (err, foundConsole) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('Index2', {vgconsoles: foundConsole})
+        }
+    })
+}
+
 // new
 const newConsole = (req, res) => {
    
@@ -51,12 +63,27 @@ const updateConsole = (req, res) => {
 
 // buy 
 const buyItem = (req, res) => {
-    vgConsole.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 } }, (err, foundConsole) => {
+
+    // updates quantity property by decrementing 1 whenever clickign on 'Buy Item' and redirects back to show page
+    vgConsole.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 } }, (err, foundConsole) => { 
         
         if (err) {
             res.status(400).json(err)
         } else {
             res.status(200).redirect(`/products/${req.params.id}`)
+        }
+    })
+}
+
+// buy customer
+// similar to buy function except redirects to customer show page 
+const buyItem2 = (req, res) => {
+    vgConsole.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 } }, (err, foundConsole) => {
+        
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/products/customer/${req.params.id}`)
         }
     })
 }
@@ -104,13 +131,31 @@ const showUniqueConsole = (req, res) => {
     })
 }
 
+// show2
+// renders show2
+const showUniqueConsole2 = (req, res) => {
+
+    vgConsole.findById(req.params.id, (err, foundConsole) => {
+        if (err) {
+            
+            res.status(400).json(err)
+        } else {
+            
+            res.status(200).render('Show2', { vgconsole: foundConsole })
+        }
+    })
+}
+
 module.exports = {
     findAllConsoles,
+    findAllConsoles2,
     newConsole,
     deleteConsole,
     updateConsole,
     buyItem,
+    buyItem2,
     createConsole,
     editConsole,
-    showUniqueConsole
+    showUniqueConsole,
+    showUniqueConsole2
 }

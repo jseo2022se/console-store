@@ -1,9 +1,8 @@
 const React = require('react')
-const DefaultLayout = require('../views/layouts/DefaultLayouts')
+const DefaultLayout2 = require('../views/layouts/DefaultLayout2')
 
-// Index layout for what store owners will see on their front page 
-
-class Index extends React.Component {
+// Index page for customers, identical except for the difference in HTML wrapper (DefaultLayouts2)
+class Index2 extends React.Component {
 
     render() {
 
@@ -11,24 +10,23 @@ class Index extends React.Component {
         const { vgconsoles } = this.props
 
         return (
-            <DefaultLayout title='All Consoles' group='Home'>
+            <DefaultLayout2 title='All Consoles' group='Home'>
                 <h1 className='title'>The Console Dungeon</h1>
                 <ul id='all-index'>
                     {vgconsoles.map((vgconsole) => {
                         return (
                             <li key={vgconsole._id}>
                                 <div>
-                                    {/* Clickable images that lead to the product's show page */}
-                                    <a href={`/products/${vgconsole._id}`}><img src={`${vgconsole.imgUrl}`}></img></a>
+                                    <a href={`/products/customer/${vgconsole._id}`}><img src={`${vgconsole.imgUrl}`}></img></a>
                                 </div>
                             </li>
                         )
                     })}
                 </ul>
 
-            </DefaultLayout>
+            </DefaultLayout2>
         )
     }
 }
 
-module.exports = Index
+module.exports = Index2

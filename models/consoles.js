@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 // add a shortcut to Schema
 const Schema = mongoose.Schema
 
-// create our Schema
+// create Schema
 const vgConsoleSchema = new Schema({
     name: { type: String, required: true }, 
     details: { type: String, required: true },
@@ -13,8 +13,6 @@ const vgConsoleSchema = new Schema({
     price: { type: Number, required: true},
     imgUrl: { type: String, required: true}
 })
-
-const cart = []
 
 // create a Model from our Schema
 const vgConsole = mongoose.model('vgConsole', vgConsoleSchema)
