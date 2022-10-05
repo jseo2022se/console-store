@@ -47,6 +47,8 @@ Routes available as store staff
 | ------------- | ------------- | ------------ |
 | GET  | /products  | index of products from store view |
 | GET  | /products/new  | page to add new product |
+| GET  | /products/about  | page displays store information |
+| GET  | /products/contact  | page to contact the store |
 | DELETE  | /products/:id  | delete a product |
 | PUT  | /products/:id  | update a product |
 | PUT  | /products/:id/buy  | buying the product |
@@ -60,9 +62,10 @@ Routes available for customers
 | VERB  | PATH | Description |
 | ------------- | ------------- | ------------ |
 | GET  | /products/customer  | index of products customers can view |
+| GET  | /products/customer/about  | about page that customer can view |
+| GET  | /products/customer/contact  | contact page that customer can view |
 | PUT  | /products/customer/:id/buy  | customers buying the product |
 | GET  | /products/customer/:id  | show page of a product for the customer |
-
 
 
 ## License
