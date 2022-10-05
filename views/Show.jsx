@@ -4,11 +4,6 @@ const DefaultLayout = require('../views/layouts/DefaultLayouts')
 
 class Show extends React.Component {
 
-    
-
-    // handleClick = (amount) => {
-    //     amount--;
-    // }
 
     render() {
 
@@ -39,21 +34,14 @@ class Show extends React.Component {
                     </p>
 
                     <nav>
-                        <a href={`/products/${_id}/edit`}>Edit</a>
+                        <a id='edit' href={`/products/${_id}/edit`}>Edit Details</a>
                     </nav>
 
                     <br></br>
 
-                    {/*onClick={this.handleClick( { quantity: { $inc: -1 } } )*/}
-                    <button hidden={ quantity == 0 ? true : false}>
-                        <a href={`/products/${_id}`}>Buy</a>
-                    </button>
-
-                    <br></br>
-
-                    {/* <form action={`/products/${_id}?_method=PUT`} method='POST'>
+                    <form action={`/products/${_id}/buy?_method=PUT`} method='POST' hidden={ quantity == 0 ? true : false }>
                         <input type='submit' value='Buy Item'></input>
-                    </form> */}
+                    </form>
 
                     <form action={`/products/${_id}?_method=DELETE`} method='POST'>
                         <input type='submit' value='Delete'></input>

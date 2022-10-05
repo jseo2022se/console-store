@@ -97,3 +97,19 @@ p {
     color: rgb(225, 133, 20);
     font-weight: bold;
 }
+
+#edit {
+    flex: 1;
+    text-decoration: none;
+    outline: none;
+    text-align: center;
+    line-height: 1;
+    font-size: 30px;
+    color:rgb(239, 242, 236);
+}
+
+#edit:link,
+#edit:visited,
+#edit:focus {
+    background-color: rgb(85, 34, 152);
+}

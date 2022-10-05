@@ -8,11 +8,11 @@ const router = express.Router()
 
 // bringing in the callback functions to be used inside routes
 const { 
-    findAllConsoles, 
+    findAllConsoles,
     newConsole,
     deleteConsole,
     updateConsole,
-    // buyItem,
+    buyItem,
     createConsole,
     editConsole,
     showUniqueConsole } = require('../controllers/consoleController')
@@ -30,7 +30,7 @@ router.delete('/:id', deleteConsole)
 router.put('/:id', updateConsole)
 
 // buy route
-// router.put('/:id', buyItem)
+router.put('/:id/buy', buyItem)
 
 // create route
 router.post('/', createConsole)

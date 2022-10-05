@@ -1,6 +1,7 @@
 // loading console model
 const vgConsole = require('../models/consoles')
 
+
 // index
 const findAllConsoles = (req, res) => {
     vgConsole.find({}, (err, foundConsole) => {
@@ -49,10 +50,16 @@ const updateConsole = (req, res) => {
 }
 
 // buy 
-// const buyItem = (req, res) => {
-//     vgConsole.updateOne(req.params.id, { $inc: { amount: -1 }}, { new: true });
-//     res.redirect(`/products/${req.params.id}`)
-// }
+const buyItem = (req, res) => {
+    vgConsole.findByIdAndUpdate(req.params.id, { $inc: { quantity: -1 } }, (err, foundConsole) => {
+        
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/products/${req.params.id}`)
+        }
+    })
+}
 
 // create
 const createConsole = (req, res) => {
@@ -102,7 +109,7 @@ module.exports = {
     newConsole,
     deleteConsole,
     updateConsole,
-    // buyItem,
+    buyItem,
     createConsole,
     editConsole,
     showUniqueConsole

@@ -14,7 +14,7 @@ const vgConsoleSchema = new Schema({
     imgUrl: { type: String, required: true}
 })
 
-// const cart = []
+const cart = []
 
 // create a Model from our Schema
 const vgConsole = mongoose.model('vgConsole', vgConsoleSchema)
