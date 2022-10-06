@@ -3,7 +3,7 @@
 
 ## Description
 
-The project is an store that sells consoles to customers, with the option of changing the inventory regarding the products.
+The project is an store that sells video game consoles to customers, with the option of changing the inventory regarding the products.
 
 ## Technologies 
 
