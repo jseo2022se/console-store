@@ -13,6 +13,8 @@ class Index extends React.Component {
         return (
             <DefaultLayout title='All Consoles' group='Home'>
                 <h1 className='title'>The Console Dungeon</h1>
+                <br></br>
+                <h2 className='show-details'>Products</h2>
                 <ul id='all-index'>
                     {vgconsoles.map((vgconsole) => {
                         return (
