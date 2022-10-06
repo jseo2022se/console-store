@@ -68,6 +68,11 @@ Routes available for customers
 | GET  | /products/customer/:id  | show page of a product for the customer |
 
 
+## Deployment
+
+- To view routes available as store staff: https://fair-pink-sturgeon-gown.cyclic.app/products
+- To view routes available as customer: https://fair-pink-sturgeon-gown.cyclic.app/products/customer
+
 ## License
 
 [MIT]
